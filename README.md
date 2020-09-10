@@ -1,79 +1,209 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+-   [Stringify](#stringify)
+    -   [Audience](#audience)
+    -   [Objectives](#objectives)
+    -   [Contents](#contents)
+    -   [How to Use](#how-to-use)
+    -   [Proposed Testing](#proposed-testing)
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+Stringify
+=========
 
-## About Laravel
+Audience
+--------
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This tool has been developed in response to help iPrice assess my technical skills, and its requirements have been detailed in a Technical Assessment document.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Objectives
+----------
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+As mentioned in the Technical Assessment document, we need to create a CLI tool that takes a string as an input and outputs:
 
-## Learning Laravel
+-   String in uppercase format
+-   String alternating between uppercase and lowercase formats
+-   `CSV created!` along with a CSV file that treats each character in the input as its own column
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Additional Inclusions
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+While the assessment did not explicitly require it, I took the liberty to do three additional tasks:
 
-## Laravel Sponsors
+1.  Create a second CLI tool that extends the required tool (in order to prove extendability)
+2.  Create two units tests, one for each CLI tool (in order to prove the code can respond to unit-testing)
+3.  Create a simple shell script to run both unit tests
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Additional Inclusions Objectives
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+The objectives of the additional inclusions aim to address expectations of the assessment that were not included in the expected output, namely the requirement that the project is **unit-testable** and **extendible**.
 
-## Contributing
+1.  **Second CLI tool**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+-   Uses the main class to output:
 
-## Code of Conduct
+    -   String in uppercase format
+    -   String alternating between uppercase and lowercase formats
+-   It uses the main class along with its own properties to output:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    -   `CSV created!` along with a differently-named CSV file similar to that of the main class but with a different delimiter (main class uses `,`, this class uses `;`)
+-   Finally, it has its own features that outputs:
 
-## Security Vulnerabilities
+    -   String in lowercase format
+    -   A second version of the main class’s alternating cases string
+        -   The main difference is this version does not take non-alphabetical characters into consideration when alternating
+    -   String where all lowercase characters are converted to uppercase, and uppercase characters are converted to lowercase
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1.  **Unit Tests**
+     The units tests have one main objective:
 
-## License
+    -   Verify that both classes are running as expected against different kinds of inputs
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+2.  **Shell script**
+     A simple tool to automatically run both test scripts. The output can in turn be recorded for auditing and verifications purposes.
+
+Contents
+--------
+
+-   The `Stringify` class
+    -   Responds to the three requirements stated in the Technical Assessment document
+    -   Location:
+        -   *stringTool \> app \> Console \> Commands \> `Stringify.php`*
+-   The `StringifyExt` class
+    -   Extends the `Stringify` class, using classes from `Stringify` as well as its own classes
+    -   Location:
+        -   *stringTool \> app \> Console \> Commands \> `StringifyExt.php`*
+-   The `stringifyTest` class
+    -   Performs 9 units tests on the `Stringify` class
+    -   Location:
+        -   *stringTool \> tests \> Unit \> `stringifyTest.php`*
+-   The `stringifyExtTest` class
+    -   Performs 9 units tests on the `StringifyExt` class
+    -   Location:
+        -   *stringTool \> tests \> Unit \> `stringifyExtTest.php`*
+-   The `stringify` shell script
+    -   Runs both unit tests
+    -   Located directly on the root
+        -   *stringTool \> `stringify.sh`*
+
+How to Use
+----------
+
+### Setting up the environment
+
+1.  Download the `stringTool.tar.bz2` file, attached with this email
+2.  Place the file in the directory where you desire the tool to be placed
+3.  Uncompress the file using the following command
+    -   `tar -xvf stringTool.tar.bz2`
+
+4.  The project directory will now be visible
+5.  Make sure your CLI is inside the project
+    -   The directory name is `stringTool`
+
+### Running the `Stringify` tool
+
+#### Input
+
+There are three ways to run the tool:
+
+1.  Type *php artisan stringify* and follow it up with the input string
+    -   If inputting `Hello`, you can type:
+        -   `php artisan stringify Hello`
+            -   Note that this will only work if your string has no spaces
+
+2.  Type *php artisan stringify* followed by the input string inside double quotes
+    -   If inputting `Hello`, you can type:
+        -   `php artisan stringify "Hello"`
+
+3.  Type *php artisan stringify* only
+    -   You will be then prompted to give your input
+        -   If inputting `Hello`, you can type:
+            -   `php artisan stringify`
+        -   Wait until you see the following prompt:
+            -   `Please Input a String:`
+        -   Respond with your input string:
+            -   `Hello`
+
+##### Note: Assuming permissions are available, you can pass this command with a second argument that will allow the CSV file to be created in a different directory. One of the unit test scenarios attempts to do so.
+
+#### Output
+
+Regardless of which way you have used, the output will be the same. Assuming you’ve used `Hello` as an input, your output would look like:
+
+> HELLO
+>  hElLO
+>  CSV created!
+
+-   Do note:
+    -   You must press enter after each line of command
+    -   The CSV file will be located in the root directory, and is named after the class (*/stringTool/Stringify.csv*)
+
+### Running the `StringifyExt` tool
+
+#### Input
+
+The StringifyExt tool runs exactly the same way as Stringify, with one difference
+ -Replace all instances of `stringify` with `stringifyExt`
+
+##### Note
+
+Just like `Stringify`, you can pass this command with a second argument that will allow the CSV file to be created in a different directory. Again, one of the unit test scenarios attempts to do so.
+
+#### Output
+
+Not unlike like `Stringify`, the output would be the same regardless of the way you input the data. Assuming you also used `Hello` as your input, this is how your output would look like:
+
+> HELLO
+>  hElLo
+>  CSV created!
+>  hElLo
+>  hello
+>  hELLO
+
+-   Do note
+    -   The CSV file will be named after the class (*/stringTool/StringifyExt.csv*)
+
+### Limitations of Both Tools
+
+Due to the nature of the tools’ objectives and how CSV files work, there are certain limitations to their use. Input strings will be rejected if
+
+1.  They have no alphabetical characters
+2.  Include the delimiting character of the CSV file
+    -   The delimiting character in `Stringify` is the comma, `,`
+    -   The delimiting character in `StringifyExt` is the semicolon, `;`
+    -   Furthermore, the CSV file in particular will fail to create if the required permissions are not present.
+
+### Performing Unit Testing
+
+The unit tests aim to try different scenarios, using a mixture of:
+
+-   Passing the input string as an argument, or waiting to be prompted
+-   Passing strings that do not include alphabetical characters
+-   Passing strings that include the CSV delimeter
+-   Attempting to save the CSV in scenarios where it’s not permissible
+
+Making sure your CLI is still inside the project, you will simply need to run the `stringify.sh` file, which will in turn automatically run both test scripts. Depending on the CLI you are using, you can do so using *one* of the following:
+
+-   `sh stringify.sh`
+    -   We will be using this for the remainder of the documentation
+-   `./stringify.sh`
+    -   You can continue following the documentation using this command if your CLI allows you
+
+Proposed Testing
+----------------
+
+These are the steps I have used to verify the code. You can verify by looking at the `out.txt` file inside the `stringTool` directory.
+ Do feel free to let me know if you have further suggestions .
+
+1.  Decompress the attached file
+    -   `tar -xvf stringTool.tar.bz2`
+
+2.  Go into the `stringTool` directory
+    -   `cd stringTool\`
+
+3.  Run the `stringify.sh` script and output it to `out.txt`
+    -   `sh stringify.sh > out.txt`
+
+4.  View the outputted file
+    -   `cat out.txt`
+
+5.  Verify that all tests have passed
+    -   18 in total, 9 for each tool
+
+

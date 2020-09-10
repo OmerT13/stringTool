@@ -1,0 +1,157 @@
+Welcome to the Stringify Shell Script! We will be running both unit tests to confirm all is well
+Warning: TTY mode is not supported on Windows platform.
+
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyTest[39;22m
+  [33;1m•[39;22m[39m [2margument string input[22m[39m
+
+  [37;1mTests:  [39;22m[39m[2m9 pending[22m[39m
+[4A[0J
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyTest[39;22m
+  [33;1m•[39;22m[39m [2mprompted string input[22m[39m
+
+  [37;1mTests:  [39;22m[32;1m1 passed[39;22m[39m, [2m8 pending[22m[39m
+[4A[0J
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyTest[39;22m
+  [33;1m•[39;22m[39m [2margument non alphabetic input[22m[39m
+
+  [37;1mTests:  [39;22m[32;1m2 passed[39;22m[39m, [2m7 pending[22m[39m
+[4A[0J
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyTest[39;22m
+  [33;1m•[39;22m[39m [2mprompted non alphabetic input[22m[39m
+
+  [37;1mTests:  [39;22m[32;1m3 passed[39;22m[39m, [2m6 pending[22m[39m
+[4A[0J
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyTest[39;22m
+  [33;1m•[39;22m[39m [2margument mixed input[22m[39m
+
+  [37;1mTests:  [39;22m[32;1m4 passed[39;22m[39m, [2m5 pending[22m[39m
+[4A[0J
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyTest[39;22m
+  [33;1m•[39;22m[39m [2mprompted mixed input[22m[39m
+
+  [37;1mTests:  [39;22m[32;1m5 passed[39;22m[39m, [2m4 pending[22m[39m
+[4A[0J
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyTest[39;22m
+  [33;1m•[39;22m[39m [2margument mixed input with comma[22m[39m
+
+  [37;1mTests:  [39;22m[32;1m6 passed[39;22m[39m, [2m3 pending[22m[39m
+[4A[0J
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyTest[39;22m
+  [33;1m•[39;22m[39m [2mprompted mixed input with comma[22m[39m
+
+  [37;1mTests:  [39;22m[32;1m7 passed[39;22m[39m, [2m2 pending[22m[39m
+[4A[0J
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyTest[39;22m
+  [33;1m•[39;22m[39m [2mwith csv not permitted[22m[39m
+
+  [37;1mTests:  [39;22m[32;1m8 passed[39;22m[39m, [2m1 pending[22m[39m
+[4A[0J
+  [37;41;1m FAIL [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyTest[39;22m
+  [32;1m✓[39;22m[39m [2margument string input[22m[39m
+  [32;1m✓[39;22m[39m [2mprompted string input[22m[39m
+  [32;1m✓[39;22m[39m [2margument non alphabetic input[22m[39m
+  [32;1m✓[39;22m[39m [2mprompted non alphabetic input[22m[39m
+  [32;1m✓[39;22m[39m [2margument mixed input[22m[39m
+  [32;1m✓[39;22m[39m [2mprompted mixed input[22m[39m
+  [32;1m✓[39;22m[39m [2margument mixed input with comma[22m[39m
+  [32;1m✓[39;22m[39m [2mprompted mixed input with comma[22m[39m
+  [31;1m✕[39;22m[39m [2mwith csv not permitted[22m[39m
+
+  [37;1mTests:  [39;22m[31;1m1 failed[39;22m[39m, [39m[32;1m8 passed[39;22m
+
+[39;1m  Output "Error: Unable to write CSV File. Refer to the following line for the error" was not printed.[39;22m
+
+  at [32mC:\laragon\www\stringTool\vendor\phpunit\phpunit\src\Framework\Assert.php[39m:[32m3309[39m
+    [90m3305| [0m[90;3m    [0m[35;1mpublic static function [0m[39;1mfail[0m[35;1m([0m[39;1mstring $message [0m[35;1m= [0m[37m''[0m[35;1m): [0m[39;1mvoid[0m
+    [90m3306| [0m[39;1m    [0m[35;1m{[0m
+    [90m3307| [0m[35;1m        [0m[39;1mself[0m[35;1m::[0m[39;1m$count[0m[35;1m++;[0m
+    [90m3308| [0m
+[31;1m  > [0m[90m3309| [0m[35;1m        throw new [0m[39;1mAssertionFailedError[0m[35;1m([0m[39;1m$message[0m[35;1m);[0m
+    [90m3310| [0m[35;1m    }[0m
+    [90m3311| [0m
+    [90m3312| [0m[35;1m    [0m[90;3m/**[0m
+    [90m3313| [0m[90;3m     * Returns the value of an attribute of a class or an object.[0m
+
+  [33m1   [39m[39;1mC:\laragon\www\stringTool\vendor\laravel\framework\src\Illuminate\Testing\PendingCommand.php[39;22m:[39;1m214[39;22m
+  [37m    PHPUnit\Framework\Assert::fail("Output "Error: Unable to write CSV File. Refer to the following line for the error" was not printed.")[39m
+
+  [33m2   [39m[39;1mC:\laragon\www\stringTool\vendor\laravel\framework\src\Illuminate\Testing\PendingCommand.php[39;22m:[39;1m185[39;22m
+  [37m    Illuminate\Testing\PendingCommand::verifyExpectations()[39m
+Warning: TTY mode is not supported on Windows platform.
+
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyExtTest[39;22m
+  [33;1m•[39;22m[39m [2margument string input[22m[39m
+
+  [37;1mTests:  [39;22m[39m[2m9 pending[22m[39m
+[4A[0J
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyExtTest[39;22m
+  [33;1m•[39;22m[39m [2mprompted string input[22m[39m
+
+  [37;1mTests:  [39;22m[32;1m1 passed[39;22m[39m, [2m8 pending[22m[39m
+[4A[0J
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyExtTest[39;22m
+  [33;1m•[39;22m[39m [2margument non alphabetic input[22m[39m
+
+  [37;1mTests:  [39;22m[32;1m2 passed[39;22m[39m, [2m7 pending[22m[39m
+[4A[0J
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyExtTest[39;22m
+  [33;1m•[39;22m[39m [2mprompted non alphabetic input[22m[39m
+
+  [37;1mTests:  [39;22m[32;1m3 passed[39;22m[39m, [2m6 pending[22m[39m
+[4A[0J
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyExtTest[39;22m
+  [33;1m•[39;22m[39m [2margument mixed input[22m[39m
+
+  [37;1mTests:  [39;22m[32;1m4 passed[39;22m[39m, [2m5 pending[22m[39m
+[4A[0J
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyExtTest[39;22m
+  [33;1m•[39;22m[39m [2mprompted mixed input[22m[39m
+
+  [37;1mTests:  [39;22m[32;1m5 passed[39;22m[39m, [2m4 pending[22m[39m
+[4A[0J
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyExtTest[39;22m
+  [33;1m•[39;22m[39m [2margument mixed input with semicolon[22m[39m
+
+  [37;1mTests:  [39;22m[32;1m6 passed[39;22m[39m, [2m3 pending[22m[39m
+[4A[0J
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyExtTest[39;22m
+  [33;1m•[39;22m[39m [2mprompted mixed input with semicolon[22m[39m
+
+  [37;1mTests:  [39;22m[32;1m7 passed[39;22m[39m, [2m2 pending[22m[39m
+[4A[0J
+  [30;43;1m RUNS [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyExtTest[39;22m
+  [33;1m•[39;22m[39m [2mwith csv not permitted[22m[39m
+
+  [37;1mTests:  [39;22m[32;1m8 passed[39;22m[39m, [2m1 pending[22m[39m
+[4A[0J
+  [37;41;1m FAIL [39;49;22m[39m [2mTests\Unit\[22m[39m[37;1mstringifyExtTest[39;22m
+  [32;1m✓[39;22m[39m [2margument string input[22m[39m
+  [32;1m✓[39;22m[39m [2mprompted string input[22m[39m
+  [32;1m✓[39;22m[39m [2margument non alphabetic input[22m[39m
+  [32;1m✓[39;22m[39m [2mprompted non alphabetic input[22m[39m
+  [32;1m✓[39;22m[39m [2margument mixed input[22m[39m
+  [32;1m✓[39;22m[39m [2mprompted mixed input[22m[39m
+  [32;1m✓[39;22m[39m [2margument mixed input with semicolon[22m[39m
+  [32;1m✓[39;22m[39m [2mprompted mixed input with semicolon[22m[39m
+  [31;1m✕[39;22m[39m [2mwith csv not permitted[22m[39m
+
+  [37;1mTests:  [39;22m[31;1m1 failed[39;22m[39m, [39m[32;1m8 passed[39;22m
+
+[39;1m  Output "Error: Unable to write CSV File. Refer to the following line for the error" was not printed.[39;22m
+
+  at [32mC:\laragon\www\stringTool\vendor\phpunit\phpunit\src\Framework\Assert.php[39m:[32m3309[39m
+    [90m3305| [0m[90;3m    [0m[35;1mpublic static function [0m[39;1mfail[0m[35;1m([0m[39;1mstring $message [0m[35;1m= [0m[37m''[0m[35;1m): [0m[39;1mvoid[0m
+    [90m3306| [0m[39;1m    [0m[35;1m{[0m
+    [90m3307| [0m[35;1m        [0m[39;1mself[0m[35;1m::[0m[39;1m$count[0m[35;1m++;[0m
+    [90m3308| [0m
+[31;1m  > [0m[90m3309| [0m[35;1m        throw new [0m[39;1mAssertionFailedError[0m[35;1m([0m[39;1m$message[0m[35;1m);[0m
+    [90m3310| [0m[35;1m    }[0m
+    [90m3311| [0m
+    [90m3312| [0m[35;1m    [0m[90;3m/**[0m
+    [90m3313| [0m[90;3m     * Returns the value of an attribute of a class or an object.[0m
+
+  [33m1   [39m[39;1mC:\laragon\www\stringTool\vendor\laravel\framework\src\Illuminate\Testing\PendingCommand.php[39;22m:[39;1m214[39;22m
+  [37m    PHPUnit\Framework\Assert::fail("Output "Error: Unable to write CSV File. Refer to the following line for the error" was not printed.")[39m
+
+  [33m2   [39m[39;1mC:\laragon\www\stringTool\vendor\laravel\framework\src\Illuminate\Testing\PendingCommand.php[39;22m:[39;1m185[39;22m
+  [37m    Illuminate\Testing\PendingCommand::verifyExpectations()[39m

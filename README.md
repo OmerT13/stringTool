@@ -11,7 +11,7 @@ Stringify
 Audience
 --------
 
-This tool has been developed in response to help iPrice assess my technical skills, and its requirements have been detailed in a Technical Assessment document.
+This tool has been developed in response to a challenge to assess my CLI skills, and its requirements have been detailed in a Technical Assessment document.
 
 Objectives
 ----------
